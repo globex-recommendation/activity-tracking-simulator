@@ -27,7 +27,7 @@ public class SimulatorResource {
         JsonObject json = new JsonObject(payload);
         int count = json.getInteger("count");
         return simulatorService.simulate(count).onItem().transform(i ->
-                Response.status(Response.Status.CREATED.getStatusCode()).entity("Simulated " + count + " activities").build());
+                Response.status(Response.Status.OK.getStatusCode()).entity("Simulated " + count + " activities").build());
     }
 
 }

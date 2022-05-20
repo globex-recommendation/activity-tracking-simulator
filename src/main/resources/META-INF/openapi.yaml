@@ -1,0 +1,28 @@
+oopenapi: 3.0.3
+info:
+  title: Globex Activity Tracking Simulation
+  version: 1
+paths:
+  /simulate:
+    summary: Generate activity events
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+            examples:
+              simulate example:
+                value:
+                  count: 100
+        required: true
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                simulate example:
+                  value: Simulated 100 activities
+          description: Activities created
